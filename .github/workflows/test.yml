@@ -1,4 +1,4 @@
-name: Test plugin
+name: Run Test plugin
 on: [pull_request]
 
 jobs:
