@@ -100,9 +100,6 @@ class Analytics {
 		);
 	}
 
-	/**
-	 * @param Row $api_response_row
-	 */
 	public function get_dimension_value( $api_response_row ) {
 		try {
 			$demension_values = $api_response_row->getDimensionValues();
@@ -116,9 +113,6 @@ class Analytics {
 		}
 	}
 
-	/**
-	 * @param Row $api_response_row
-	 */
 	public function get_metric_value( $api_response_row ) {
 		try {
 			$metric_values = $api_response_row->getMetricValues();

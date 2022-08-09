@@ -2,10 +2,7 @@
     "config": {
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true
-        },
-		"platform": {
-			"php": "8.0"
-		}
+        }
     },
     "require": {
         "google/analytics-data": "^0.8.5"

@@ -234,7 +234,7 @@ function sga_ranking_ids( $args = array(), $get_with_page_views = false ) {
 				}
 
 				if ( true === $get_with_page_views ) {
-					$returns[] = array(
+					$post_ids[] = array(
 						$post_id,
 						(int) $result[1],
 					);
