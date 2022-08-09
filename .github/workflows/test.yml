@@ -44,7 +44,10 @@ jobs:
           path: vendor
           key: composer-${{ hashFiles('composer.lock') }}
 
-      - name: Composer install
+      - name: composer update
+        run: composer update
+
+      - name: composer install
         run: composer install --optimize-autoloader --prefer-dist
 
       - name: Coding Style check
