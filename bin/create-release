@@ -1,0 +1,8 @@
+#!/bin/sh
+RELEASE_DIR='./simple-ga-4-ranking'
+if [ -d $RELEASE_DIR ]; then
+	rm -rf $RELEASE_DIR
+fi
+mkdir -p $RELEASE_DIR
+rsync -a --exclude-from=.distignore ./ $RELEASE_DIR
+zip -r release.zip $RELEASE_DIR

@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+tests/phpunit/tmp/*
+tests/phpunit/.phpunit*
+vendor
+simple-ga-4-ranking/
+.wp-env.override.json
+*.sql
+*.tar.gz
+*.zip
+*.log
+*.bak

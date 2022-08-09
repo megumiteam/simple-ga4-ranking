@@ -1,0 +1,39 @@
+{
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+		"platform": {
+			"php": "8.0"
+		}
+    },
+    "require": {
+        "google/analytics-data": "^0.8.5"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "*",
+        "phpcompatibility/phpcompatibility-wp": "*",
+        "squizlabs/php_codesniffer": "*",
+        "yoast/phpunit-polyfills": "^1.0.1",
+        "humanmade/coding-standards": "*",
+        "szepeviktor/phpstan-wordpress": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "digitalcube\\SimpleGA4Ranking\\" : "includes/"
+        }
+    },
+    "scripts": {
+        "lint"           : "phpcs --standard=./tests/phpcs/.phpcs.xml",
+        "format"         : "phpcbf --standard=./tests/phpcs/.phpcs.xml --report-summary --report-source",
+        "analyze"        : "vendor/bin/phpstan analyse -c tests/phpstan/phpstan.neon --memory-limit=1G",
+        "setup-phpunit"  : "bash tests/phpunit/install-wp-tests.sh tests-wordpress root password tests-mysql '' true true",
+        "phpunit"        : "wp-env run phpunit 'IS_WP_ENV=1 phpunit -c /var/www/html/wp-content/plugins/simple-ga-4-ranking/tests/phpunit/phpunit.xml --verbose'",
+        "release"        : "bash bin/create-release",
+        "test" : [
+            "@lint",
+            "@analyze",
+            "@phpunit"
+        ]
+    }
+}
