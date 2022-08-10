@@ -12,13 +12,13 @@ class View {
 
 		add_settings_section(
 			$section,
-			'設定',
+			__( 'Settings', 'sga4ranking' ),
 			[ View::class, 'settings_section' ], $key
 		);
 
 		add_settings_field(
 			'period',
-			__( '本日から何日前までのランキングを表示させるか', 'sga4ranking' ),
+			__( 'Display ranking for how many days before', 'sga4ranking' ),
 			[ View::class, 'field_period' ],
 			$key,
 			$section
@@ -26,7 +26,7 @@ class View {
 
 		add_settings_field(
 			'cache_expire',
-			__( 'キャッシュ時間（秒）', 'sga4ranking' ),
+			__( 'Cache time (seconds)', 'sga4ranking' ),
 			[ View::class, 'field_cache_expire' ],
 			$key,
 			$section
@@ -34,7 +34,7 @@ class View {
 
 		add_settings_field(
 			'display_count',
-			__( '表示数', 'sga4ranking' ),
+			__( 'Number of displays', 'sga4ranking' ),
 			[ View::class, 'field_display_count' ],
 			$key,
 			$section
@@ -75,7 +75,7 @@ class View {
 		<?php
 		if ( 'true' === filter_input( INPUT_GET, 'settings-updated' ) ) {
 			?>
-		<div class="updated"><p><?php _e( '設定を保存しました。', 'sga4ranking' ) ?></p></div>
+		<div class="updated"><p><?php _e( 'Settings saved.', 'sga4ranking' ) ?></p></div>
 			<?php
 		}
 	}

@@ -50,8 +50,8 @@ class Admin {
 
 	public function admin_menu() {
 		add_options_page(
-			__( 'Google 認証', 'sga4ranking' ),
-			__( 'Google 認証', 'sga4ranking' ),
+			__( 'Google Authentication', 'sga4ranking' ),
+			__( 'Google Authentication', 'sga4ranking' ),
 			'manage_options',
 			'gapiwp-analytics',
 			[ View::class, 'option_page' ]
