@@ -11,7 +11,16 @@ class Admin {
 		'callback_url'  => '',
 	];
 
-	public function admin_head() {
+	public function admin_init() {
+
+		$request_to_google_auth = false;
+		global $pagenow;
+		if ( isset( $pagenow ) && 'options-general.php' === $pagenow && 'gapiwp-analytics' === filter_input( INPUT_GET, 'page' ) ) {
+			$request_to_google_auth = true;
+		}
+		if ( ! $request_to_google_auth ) {
+			return;
+		}
 
 		$do_auth = false;
 

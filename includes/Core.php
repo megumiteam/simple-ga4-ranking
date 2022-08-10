@@ -21,7 +21,7 @@ class Core {
 			'plugins_loaded', function() {
 				if ( class_exists( '\digitalcube\SimpleGA4Ranking\Admin\OAuth\Admin' ) ) {
 					$admin = new Admin\OAuth\Admin();
-					add_action( 'admin_init', [ $admin, 'admin_head' ] );
+					add_action( 'admin_init', [ $admin, 'admin_init' ] );
 					add_action( 'admin_menu', [ $admin, 'admin_menu' ] );
 				}
 				if ( class_exists( '\digitalcube\SimpleGA4Ranking\Admin\OAuth\View' ) ) {
