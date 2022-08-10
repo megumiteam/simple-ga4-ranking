@@ -1,0 +1,116 @@
+# Copyright (C) 2022 Digitalcube
+# This file is distributed under the same license as the Simple GA 4 Ranking plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Simple GA 4 Ranking 0.0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/simple-ga-4-"
+"ranking\n"
+"POT-Creation-Date: 2022-08-10T11:13:00+00:00\n"
+"PO-Revision-Date: 2022-08-10 20:17+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.1.1\n"
+"X-Domain: sga4ranking\n"
+
+#. Plugin Name of the plugin
+#: modules/wp-widget.class.php:17
+msgid "Simple GA 4 Ranking"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://digitalcube.jp"
+msgstr ""
+
+#. Description of the plugin
+msgid "Ranking plugin using data from google analytics."
+msgstr "Googleアナリティクスのデータを利用したランキングプラグイン。"
+
+#. Author of the plugin
+msgid "Digitalcube"
+msgstr ""
+
+#: includes/Admin/OAuth/Admin.php:53 includes/Admin/OAuth/Admin.php:54
+msgid "Google Authentication"
+msgstr "Google 認証"
+
+#: includes/Admin/OAuth/View.php:15 includes/Admin/Options/View.php:15
+msgid "Settings"
+msgstr "設定"
+
+#: includes/Admin/OAuth/View.php:21
+msgid "client ID"
+msgstr "クライアントID"
+
+#: includes/Admin/OAuth/View.php:29
+msgid "client secret"
+msgstr "クライアントシークレット"
+
+#: includes/Admin/OAuth/View.php:37
+msgid "redirect URI"
+msgstr "承認済のリダイレクトURI"
+
+#: includes/Admin/OAuth/View.php:45
+msgid "GA4 property id"
+msgstr "GA4 プロパティID"
+
+#: includes/Admin/OAuth/View.php:67
+msgid "GA4 settings"
+msgstr "GA4設定"
+
+#: includes/Admin/OAuth/View.php:84
+msgid "Google API Authorization (Authorized)"
+msgstr "Google API 認証 (認証済)"
+
+#: includes/Admin/OAuth/View.php:85
+msgid "Reauthorization"
+msgstr "再認証する"
+
+#: includes/Admin/OAuth/View.php:86
+msgid "access token"
+msgstr "アクセストークン"
+
+#: includes/Admin/OAuth/View.php:89
+msgid "Google API Authorization (Unauthorized)"
+msgstr "Google API 認証 (未認証)"
+
+#: includes/Admin/OAuth/View.php:90
+msgid "Authorization"
+msgstr "認証する"
+
+#: includes/Admin/OAuth/View.php:140
+msgid "Copy"
+msgstr "コピー"
+
+#: includes/Admin/Options/View.php:21
+msgid "Display ranking for how many days before"
+msgstr "何日前までのランキングを表示するか"
+
+#: includes/Admin/Options/View.php:29
+msgid "Cache time (seconds)"
+msgstr "キャッシュ時間 (秒)"
+
+#: includes/Admin/Options/View.php:37
+msgid "Number of displays"
+msgstr "表示数"
+
+#: includes/Admin/Options/View.php:45
+msgid "Debug Mode"
+msgstr "デバッグモード"
+
+#: includes/Admin/Options/View.php:78
+msgid "Settings saved."
+msgstr "設定を保存しました。"
+
+#: modules/wp-widget.class.php:15
+msgid "Show ranking the data from Google Analytics"
+msgstr "Google Analyticsのデータをランキング表示します"
+
+#: modules/wp-widget.class.php:44
+msgid "Title:"
+msgstr "タイトル:"

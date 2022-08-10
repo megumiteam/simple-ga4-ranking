@@ -12,9 +12,9 @@ class WP_Widget_SGARanking extends WP_Widget {
     public function __construct() {
         $widget_ops = array(
             'classname'   => 'widget_simple_ga_ranking',
-            'description' => __( "Show ranking the data from Google Analytics", '' ),
+            'description' => __( "Show ranking the data from Google Analytics", 'sga4ranking' ),
         );
-        parent::__construct( 'simple_ga_rankig', __( 'Simple GA4 Ranking', '' ), $widget_ops );
+        parent::__construct( 'simple_ga_rankig', __( 'Simple GA 4 Ranking', 'sga4ranking' ), $widget_ops );
     }
 
     public function widget( $args, $instance ) {
@@ -41,7 +41,7 @@ class WP_Widget_SGARanking extends WP_Widget {
         printf(
             '<p><label for="%s">%s <input class="widefat" id="%s" name="%s" type="text" value="%s" /></label></p>',
             $this->get_field_id('title'),
-            __('Title:'),
+            __( 'Title:', 'sga4ranking' ),
             $this->get_field_id('title'),
             $this->get_field_name('title'),
             esc_attr($title)

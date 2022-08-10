@@ -12,13 +12,13 @@ class View {
 
 		add_settings_section(
 			$section,
-			__( '設定', 'sga4ranking' ),
+			__( 'Settings', 'sga4ranking' ),
 			[ View::class, 'settings_section' ], $key
 		);
 
 		add_settings_field(
 			'client_id',
-			__( 'クライアント ID', 'sga4ranking' ),
+			__( 'client ID', 'sga4ranking' ),
 			[ View::class, 'field_client_id' ],
 			$key,
 			$section
@@ -26,7 +26,7 @@ class View {
 
 		add_settings_field(
 			'client_secret',
-			__( 'クライアント シークレット', 'sga4ranking' ),
+			__( 'client secret', 'sga4ranking' ),
 			[ View::class, 'field_client_secret' ],
 			$key,
 			$section
@@ -34,7 +34,7 @@ class View {
 
 		add_settings_field(
 			'callback_url',
-			__( '承認済みのリダイレクト URI', 'sga4ranking' ),
+			__( 'redirect URI', 'sga4ranking' ),
 			[ View::class, 'field_callback_url' ],
 			$key,
 			$section
@@ -42,7 +42,7 @@ class View {
 
 		add_settings_field(
 			'property_id',
-			__( 'プロパティID', 'sga4ranking' ),
+			__( 'GA4 property id', 'sga4ranking' ),
 			[ View::class, 'field_property_id' ],
 			$key,
 			$section
@@ -64,7 +64,7 @@ class View {
 		?>
 	<div class="wrap">
 
-		<h2><?php _e( 'GA4設定', 'sga4ranking' ) ?></h2>
+		<h2><?php _e( 'GA4 settings', 'sga4ranking' ) ?></h2>
 		<hr />
 
 		<form method="POST" action="options.php">
@@ -81,13 +81,13 @@ class View {
 			<form method="POST" action="<?php echo esc_url( $callbak_url ) ?>" >
 			<?php wp_nonce_field( 'sga4ranking_ga_auth', 'sga4ranking_ga_auth' ); ?>			
 			<?php if ( $auth->authorized() ) : ?>
-			<h2><?php _e( 'API認証(認証済)', 'sga4ranking' ) ?></h2>
-			<button class="button button-primary"><?php _e( '再認証する', 'sga4ranking' ) ?></button>
-			<h3><?php _e( 'トークン', 'sga4ranking' ) ?></h3>
+			<h2><?php _e( 'Google API Authorization (Authorized)', 'sga4ranking' ) ?></h2>
+			<button class="button button-primary"><?php _e( 'Reauthorization', 'sga4ranking' ) ?></button>
+			<h3><?php _e( 'access token', 'sga4ranking' ) ?></h3>
 			<p><code><?php echo get_transient( Auth::ACCESS_TOKEN_TRANSIENT_KEY ) ?></code></p>
 			<?php else : ?>
-			<h2><?php _e( 'API認証(未認証)', 'sga4ranking' ) ?></h2>
-			<button class="button button-primary"><?php _e( '認証する', 'sga4ranking' ) ?></button>
+			<h2><?php _e( 'Google API Authorization (Unauthorized)', 'sga4ranking' ) ?></h2>
+			<button class="button button-primary"><?php _e( 'Authorization', 'sga4ranking' ) ?></button>
 			<?php endif; ?>
 			</form>
 		<?php endif; ?>
@@ -137,7 +137,7 @@ class View {
 			class="regular-text" 
 			value="<?php echo esc_url( $auth_url ); ?>" 
 		/>
-		<button onclick="return copy_callback_url()">コピー</button>
+		<button onclick="return copy_callback_url()"><?php _e( 'Copy', 'sga4ranking' ); ?></button>
 		<script>
 			function copy_callback_url() {
 				navigator.clipboard.writeText(document.getElementById("callback_url").value);
