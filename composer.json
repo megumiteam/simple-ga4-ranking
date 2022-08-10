@@ -26,7 +26,7 @@
         "analyze"        : "vendor/bin/phpstan analyse -c tests/phpstan/phpstan.neon --memory-limit=1G",
         "setup-phpunit"  : "bash tests/phpunit/install-wp-tests.sh tests-wordpress root password tests-mysql '' true true",
         "phpunit"        : "wp-env run phpunit 'IS_WP_ENV=1 phpunit -c /var/www/html/wp-content/plugins/simple-ga-4-ranking/tests/phpunit/phpunit.xml --verbose'",
-        "release"        : "bash bin/create-release",
+        "create-release" : "bash bin/create-release",
         "test" : [
             "@lint",
             "@analyze",
