@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cb4e7e21aa4de535719358b102d11cb7",
+    "content-hash": "cc4d3c83a7e31a0b4fe910be44ccfcf6",
     "packages": [
         {
             "name": "firebase/php-jwt",
@@ -221,28 +221,28 @@
         },
         {
             "name": "google/gax",
-            "version": "v1.15.0",
+            "version": "v1.16.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/gax-php.git",
-                "reference": "68dfafe585650ea7b054b60864f10f7ce33ffe48"
+                "reference": "e879d2b0d9b42397c67e47880d40549e993d06ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/gax-php/zipball/68dfafe585650ea7b054b60864f10f7ce33ffe48",
-                "reference": "68dfafe585650ea7b054b60864f10f7ce33ffe48",
+                "url": "https://api.github.com/repos/googleapis/gax-php/zipball/e879d2b0d9b42397c67e47880d40549e993d06ab",
+                "reference": "e879d2b0d9b42397c67e47880d40549e993d06ab",
                 "shasum": ""
             },
             "require": {
                 "google/auth": "^1.18.0",
-                "google/common-protos": "^1.0||^2.0||^3.0",
+                "google/common-protos": "^1.3.1||^2.0||^3.0",
                 "google/grpc-gcp": "^0.2",
-                "google/longrunning": "^0.1",
-                "google/protobuf": "^3.12.2",
+                "google/longrunning": "^0.2",
+                "google/protobuf": "^3.21.4",
                 "grpc/grpc": "^1.13",
                 "guzzlehttp/promises": "^1.3",
                 "guzzlehttp/psr7": "^1.7.0||^2",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "conflict": {
                 "ext-protobuf": "<3.7.0"
@@ -270,9 +270,9 @@
             ],
             "support": {
                 "issues": "https://github.com/googleapis/gax-php/issues",
-                "source": "https://github.com/googleapis/gax-php/tree/v1.15.0"
+                "source": "https://github.com/googleapis/gax-php/tree/v1.16.1"
             },
-            "time": "2022-08-02T21:15:25+00:00"
+            "time": "2022-08-11T17:26:22+00:00"
         },
         {
             "name": "google/grpc-gcp",
@@ -321,16 +321,16 @@
         },
         {
             "name": "google/longrunning",
-            "version": "v0.1.0",
+            "version": "v0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/php-longrunning.git",
-                "reference": "d2ddbe3acf5db2692a7b515597640cf3905a534a"
+                "reference": "5b7500eede9d6b18ef038bef0b5449cbf085e1d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/php-longrunning/zipball/d2ddbe3acf5db2692a7b515597640cf3905a534a",
-                "reference": "d2ddbe3acf5db2692a7b515597640cf3905a534a",
+                "url": "https://api.github.com/repos/googleapis/php-longrunning/zipball/5b7500eede9d6b18ef038bef0b5449cbf085e1d6",
+                "reference": "5b7500eede9d6b18ef038bef0b5449cbf085e1d6",
                 "shasum": ""
             },
             "require-dev": {
@@ -359,9 +359,9 @@
             ],
             "description": "Google LongRunning Client for PHP",
             "support": {
-                "source": "https://github.com/googleapis/php-longrunning/tree/v0.1.0"
+                "source": "https://github.com/googleapis/php-longrunning/tree/v0.2.0"
             },
-            "time": "2022-07-29T00:07:49+00:00"
+            "time": "2022-08-05T00:41:21+00:00"
         },
         {
             "name": "google/protobuf",
