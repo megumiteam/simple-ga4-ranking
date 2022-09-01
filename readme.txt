@@ -1,8 +1,8 @@
 === Simple GA 4 Ranking  ===
-Contributors: amimotoamimt8biz
+Contributors: amimotoami,mt8.biz
 Tags:  form, ranking, popular, google analytics
 Requires at least: 5.9
-Tested up to: 6.0.1
+Tested up to: 6.0.2
 Stable tag: 0.0.1
 
 Ranking plugin using data from google analytics (GA4).
