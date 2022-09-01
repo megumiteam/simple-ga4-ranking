@@ -1,5 +1,5 @@
 === Simple GA 4 Ranking  ===
-Contributors: amimotoami,mt8.biz
+Contributors: digitalcube,amimotoami,mt8biz
 Tags:  form, ranking, popular, google analytics
 Requires at least: 5.9
 Tested up to: 6.0.2
