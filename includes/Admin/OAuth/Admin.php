@@ -33,16 +33,7 @@ class Admin {
 			$do_auth = true;
 		}
 
-		$call_back = (
-			! empty( filter_input( INPUT_GET, 'page' ) )
-			&&
-			! empty( filter_input( INPUT_GET, 'state' ) )
-			&&
-			! empty( filter_input( INPUT_GET, 'code' ) )
-			&&
-			! empty( filter_input( INPUT_GET, 'scope' ) )
-		);
-		if ( $call_back ) {
+		if ( $this->is_auth_callback_request() ) {
 			$do_auth = true;
 		}
 
@@ -86,6 +77,21 @@ class Admin {
 				return false;
 			}
 			if ( empty( $options[ $key ] ) ) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	private function is_auth_callback_request() {
+		$request_parameter_keys = [
+			'page',
+			'state',
+			'code',
+			'scope',
+		];
+		foreach ( $request_parameter_keys as $request_parameter_key ) {
+			if ( empty( filter_input( INPUT_GET, $request_parameter_key ) ) ) {
 				return false;
 			}
 		}

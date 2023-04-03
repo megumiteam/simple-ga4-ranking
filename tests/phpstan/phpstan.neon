@@ -6,6 +6,8 @@ parameters:
     - bootstrap.php
   paths:
     - ../../includes/
+    - ../../includes/Admin/OAuth/
+    - ../../includes/Admin/Options/
   scanFiles:
     - ../../vendor/php-stubs/wordpress-stubs/wordpress-stubs.php
   ignoreErrors:

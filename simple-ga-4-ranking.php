@@ -5,9 +5,10 @@ Plugin URI: https://digitalcube.jp
 Description: Ranking plugin using data from google analytics.
 Author: Digitalcube
 Author URI: https://digitalcube.jp
-Version: 0.0.1
+Version: 0.0.3
 Domain Path: /languages
 Text Domain: sga4ranking
+Tested up to: 6.2
 Requires at least: 5.9
 Requires PHP:　7.4
 
@@ -24,6 +25,8 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
+
+if ( ! defined( 'ABSPATH' ) ) die();
 
 load_plugin_textdomain(
 	'sga4ranking',
@@ -42,8 +45,21 @@ function sga4ranking_activation_hook() {
 }
 
 if ( ! shortcode_exists( 'sga_ranking' ) ) :
-	require_once 'vendor/autoload.php';
+	if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
+		require_once __DIR__ . '/vendor/autoload.php';
+	}
 	require_once 'loader.php';
-	$core = new \digitalcube\SimpleGA4Ranking\Core();
-	$core->register_hooks();
+	if ( false === class_exists( 'digitalcube\SimpleGA4Ranking\Core' ) ) {
+		require_once __DIR__  . '/includes/Core.php';
+		require_once __DIR__  . '/includes/Analytics.php';
+		require_once __DIR__  . '/includes/Admin/OAuth/Admin.php';
+		require_once __DIR__  . '/includes/Admin/OAuth/Auth.php';
+		require_once __DIR__  . '/includes/Admin/OAuth/View.php';
+		require_once __DIR__  . '/includes/Admin/Options/Admin.php';
+		require_once __DIR__  . '/includes/Admin/Options/View.php';
+	}
+	if ( class_exists( 'digitalcube\SimpleGA4Ranking\Core' ) ) {
+		$core = new \digitalcube\SimpleGA4Ranking\Core();
+		$core->register_hooks();
+	}
 endif;
