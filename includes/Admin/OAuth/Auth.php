@@ -125,7 +125,7 @@ class Auth {
 	}
 
 	public function authorized() {
-		return ( true !== empty( get_transient( self::ACCESS_TOKEN_TRANSIENT_KEY ) ) );
+		return ( true !== empty( $this->get_access_token( '', false ) ) );
 	}
 
 }
