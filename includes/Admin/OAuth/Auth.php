@@ -125,7 +125,7 @@ class Auth {
 	}
 
 	public function authorized() {
-		return ( true !== empty( $this->get_access_token('', false) ) );
+		return ( true !== empty( $this->get_access_token( '', false ) ) );
 	}
 
 }
