@@ -28,6 +28,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 if ( ! defined( 'ABSPATH' ) ) die();
 
+define( 'SGA4_PLUGIN_SLUG', 'simple-ga-4-ranking' );
+define( 'SGA4R_PLUGIN_MAIN_FILE', __FILE__ );
+define( 'SGA4_PLUGIN_BASE', plugin_basename( __FILE__ ) );
+
 load_plugin_textdomain(
 	'sga4ranking',
 	 false,
@@ -52,6 +56,7 @@ if ( ! shortcode_exists( 'sga_ranking' ) ) :
 	if ( false === class_exists( 'digitalcube\SimpleGA4Ranking\Core' ) ) {
 		require_once __DIR__  . '/includes/Core.php';
 		require_once __DIR__  . '/includes/Analytics.php';
+		require_once __DIR__  . '/includes/AutoUpdate.php';
 		require_once __DIR__  . '/includes/Admin/OAuth/Admin.php';
 		require_once __DIR__  . '/includes/Admin/OAuth/Auth.php';
 		require_once __DIR__  . '/includes/Admin/OAuth/View.php';
@@ -61,5 +66,9 @@ if ( ! shortcode_exists( 'sga_ranking' ) ) :
 	if ( class_exists( 'digitalcube\SimpleGA4Ranking\Core' ) ) {
 		$core = new \digitalcube\SimpleGA4Ranking\Core();
 		$core->register_hooks();
+	}
+	if ( class_exists( 'digitalcube\SimpleGA4Ranking\AutoUpdate' ) ) {
+		$au = new \digitalcube\SimpleGA4Ranking\AutoUpdate();
+		$au->register_hooks();
 	}
 endif;
