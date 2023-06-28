@@ -12,4 +12,4 @@ parameters:
     - ../../vendor/php-stubs/wordpress-stubs/wordpress-stubs.php
   ignoreErrors:
     - '#Unreachable statement - code above always terminates.#'
-    - '#^Constant [A-Z_]+ not found\.$#'
+    - '#Constant .*? not found\.#'
