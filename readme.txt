@@ -39,3 +39,6 @@ The feature to work very lightweight, because it is not save ranking data in Wor
 
 = 0.0.6 =
 * Added Auto Update from GitHub
+
+= 0.0.7 =
+* fix Auto Update from GitHub
