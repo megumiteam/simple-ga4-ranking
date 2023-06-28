@@ -11,9 +11,7 @@ class AutoUpdate {
 	}
 
 	public function pre_set_site_transient_update_plugins( $transient ) {
-		if ( ! defined( 'SGA4R_PLUGIN_MAIN_FILE' ) || defined( 'SGA4_PLUGIN_BASE' ) || defined( 'SGA4_PLUGIN_SLUG' ) ) {
-			return $transient;
-		}
+
 		$plugin_data              = get_plugin_data( SGA4R_PLUGIN_MAIN_FILE );
 		$installed_plugin_version = $plugin_data['Version'];
 		if ( empty( $installed_plugin_version ) ) {
