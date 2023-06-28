@@ -5,7 +5,7 @@ Plugin URI: https://digitalcube.jp
 Description: Ranking plugin using data from google analytics.
 Author: Digitalcube
 Author URI: https://digitalcube.jp
-Version: 0.0.5
+Version: 0.0.6
 Domain Path: /languages
 Text Domain: sga4ranking
 Tested up to: 6.2

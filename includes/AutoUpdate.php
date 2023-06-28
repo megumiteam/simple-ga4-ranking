@@ -3,7 +3,7 @@ namespace digitalcube\SimpleGA4Ranking;
 
 class AutoUpdate {
 
-	const VERSION_CHECK_JSON_URL = 'https://github.com/megumiteam/simple-ga4-ranking/blob/main/version.json';
+	const VERSION_CHECK_JSON_URL = 'https://raw.githubusercontent.com/megumiteam/simple-ga4-ranking/main/version.json';
 	const RELEASE_ZIP_URL        = 'https://github.com/megumiteam/simple-ga4-ranking/releases/download/{version}/release.zip';
 
 	public function register_hooks() {
