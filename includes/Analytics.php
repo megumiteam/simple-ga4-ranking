@@ -38,17 +38,20 @@ class Analytics {
 				}
 			}
 		} catch ( \Exception $ex ) {
-			error_log( '-----SGA4 API ERROR-----' );          // phpcs:ignore
-			if ( ! is_null( $api_parameter ) ) {
-				error_log( 'Parameter:' );                    // phpcs:ignore
-				error_log( print_r( $api_parameter, true ) ); // phpcs:ignore
+			error_log( '-----SGA4 API ERROR-----' );   // phpcs:ignore
+			error_log( $ex->getMessage() );            // phpcs:ignore
+			if ( defined( 'SGA4R_DETAIL_LOG' ) && true === SGA4R_DETAIL_LOG ) {
+				if ( ! is_null( $api_parameter ) ) {
+					error_log( 'Parameter:' );                    // phpcs:ignore
+					error_log( print_r( $api_parameter, true ) ); // phpcs:ignore
+				}
+				if ( ! is_null( $api_response ) ) {
+					error_log( 'Response:' );                     // phpcs:ignore
+					error_log( print_r( $api_response, true ) );  // phpcs:ignore
+				}
+				error_log( 'Error:' );                            // phpcs:ignore
+				error_log( print_r( $ex, true ) );                // phpcs:ignore
 			}
-			if ( ! is_null( $api_response ) ) {
-				error_log( 'Response:' );                     // phpcs:ignore
-				error_log( print_r( $api_response, true ) );  // phpcs:ignore
-			}
-			error_log( 'Error:' );                            // phpcs:ignore
-			error_log( print_r( $ex, true ) );                // phpcs:ignore
 		}
 		return apply_filters( 'sga_ranking_api_result', $result );
 	}
