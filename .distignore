@@ -17,3 +17,4 @@ composer.lock
 *.bak
 simple-ga-4-ranking
 README.md
+version.json
