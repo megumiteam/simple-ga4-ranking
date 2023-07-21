@@ -217,11 +217,11 @@ function sga_ranking_ids( $args = array(), $get_with_page_views = false ) {
 							$tax = str_replace( '__not_in', '', $key );
 							$tax_in = explode( ',', $r[$key] );
 							$post_terms = get_the_terms( $post_id, $tax );
-							$tax_not_in_flg = false;
+							$tax_not_in_flg = true;
 							if ( !empty( $post_terms ) && is_array( $post_terms ) ) {
 								foreach ( $post_terms as $post_term ) {
 									if ( !in_array( $post_term->slug, $tax_in ) ) {
-										$tax_not_in_flg = true;
+										$tax_not_in_flg = false;
 									}
 								}
 							}

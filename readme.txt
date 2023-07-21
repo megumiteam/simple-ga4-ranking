@@ -3,7 +3,7 @@ Contributors: digitalcube,amimotoami,mt8biz
 Tags:  form, ranking, popular, google analytics
 Requires at least: 5.9
 Tested up to: 6.2
-Stable tag: 0.0.6
+Stable tag: 0.0.8
 
 Ranking plugin using data from google analytics (GA4).
 
@@ -42,3 +42,6 @@ The feature to work very lightweight, because it is not save ranking data in Wor
 
 = 0.0.7 =
 * fix Auto Update from GitHub
+
+= 0.0.8 =
+* fix {tax}__not_in
