@@ -220,7 +220,7 @@ function sga_ranking_ids( $args = array(), $get_with_page_views = false ) {
 							$tax_not_in_flg = true;
 							if ( !empty( $post_terms ) && is_array( $post_terms ) ) {
 								foreach ( $post_terms as $post_term ) {
-									if ( !in_array( $post_term->slug, $tax_in ) ) {
+									if ( in_array( $post_term->slug, $tax_in ) ) {
 										$tax_not_in_flg = false;
 									}
 								}
