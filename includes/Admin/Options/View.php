@@ -51,7 +51,7 @@ class View {
 	}
 
 	public static function filter_setting( $input ) {
-		foreach ( array_keys( Admin::OPTIONS_DEFUALT ) as $option_key ) {
+		foreach ( array_keys( Admin::OPTIONS_DEFAULT ) as $option_key ) {
 			if ( ! isset( $input[ $option_key ] ) || empty( trim( $input[ $option_key ] ) ) ) {
 				$input[ $option_key ] = '';
 			}

@@ -5,7 +5,7 @@ class Admin {
 
 	const OPTIONS_KEY = 'sga4-ranking-oauth';
 
-	const OPTIONS_DEFUALT = [
+	const OPTIONS_DEFAULT = [
 		'client_id'     => '',
 		'client_secret' => '',
 		'callback_url'  => '',
@@ -59,7 +59,7 @@ class Admin {
 	}
 
 	public static function option( $key ) {
-		$option = get_option( self::OPTIONS_KEY, self::OPTIONS_DEFUALT );
+		$option = get_option( self::OPTIONS_KEY, self::OPTIONS_DEFAULT );
 		if ( is_array( $option ) && array_key_exists( $key, $option ) ) {
 			return $option[ $key ];
 		} else {
@@ -68,11 +68,11 @@ class Admin {
 	}
 
 	public function saved_options() {
-		$options = get_option( self::OPTIONS_KEY, self::OPTIONS_DEFUALT );
+		$options = get_option( self::OPTIONS_KEY, self::OPTIONS_DEFAULT );
 		if ( ! is_array( $options ) || empty( $options ) ) {
 			return false;
 		}
-		foreach ( array_keys( self::OPTIONS_DEFUALT ) as $key ) {
+		foreach ( array_keys( self::OPTIONS_DEFAULT ) as $key ) {
 			if ( ! array_key_exists( $key, $options ) ) {
 				return false;
 			}
