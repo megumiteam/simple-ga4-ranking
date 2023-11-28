@@ -2,7 +2,7 @@
 Contributors: digitalcube,amimotoami,mt8biz
 Tags:  form, ranking, popular, google analytics
 Requires at least: 5.9
-Tested up to: 6.2
+Tested up to: 6.4
 Stable tag: 0.0.9
 
 Ranking plugin using data from google analytics (GA4).
