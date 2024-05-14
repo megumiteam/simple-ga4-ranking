@@ -46,10 +46,14 @@ add_filter(
 		if ( isset( $options['display_count'] ) ) {
 			$display_count = (int) $options['display_count'];
 		}
+		if ( !empty( $options['post_type'] ) ) {
+			$post_type = implode( ',', array_map( fn( $v ) => $wpdb->prepare( '%s', trim( $v ) ), explode( ',', $options['post_type'] ) ) );
+		} else {
+			$post_type = $wpdb->prepare( '%s', 'post' );
+		}
 		$rets     = $wpdb->get_results(
 			$wpdb->prepare(
-				"SELECT ID FROM {$wpdb->posts} WHERE post_type = %s AND post_status = %s ORDER BY RAND() LIMIT 0, %d",
-				'post',
+				"SELECT ID FROM {$wpdb->posts} WHERE post_type IN ( {$post_type} ) AND post_status = %s ORDER BY RAND() LIMIT 0, %d",
 				'publish',
 				$display_count * 10
 			)
