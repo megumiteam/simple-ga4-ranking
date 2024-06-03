@@ -61,6 +61,9 @@ function sga_ranking_ids( $args = array(), $get_with_page_views = false ) {
 		}
 	}
 	$transient_key  = 'sga_' . substr( md5( $transient_key ), 0, 30 );
+	if ( isset( $options['transient_key_suffix'] ) ) {
+		$transient_key .= '_' . $options['transient_key_suffix'];
+	}
 
 	// Exclusive processing
 	$processing = $force_update ? false : get_transient( "sga_ranking_{$transient_key}" );
@@ -122,6 +125,9 @@ function sga_ranking_ids( $args = array(), $get_with_page_views = false ) {
 			$post_limit
 		);
 		$transient_key_ga_fetch = 'ga_' . substr( md5( $transient_key_ga_fetch ), 0, 30 );
+		if ( isset( $options['transient_key_suffix'] ) ) {
+			$transient_key_ga_fetch .= '_' . $options['transient_key_suffix'];
+		}
 		$results = $force_update ? false : get_transient( $transient_key_ga_fetch );
 
 		// for debugging
@@ -220,11 +226,11 @@ function sga_ranking_ids( $args = array(), $get_with_page_views = false ) {
 							$tax = str_replace( '__not_in', '', $key );
 							$tax_in = explode( ',', $r[$key] );
 							$post_terms = get_the_terms( $post_id, $tax );
-							$tax_not_in_flg = false;
+							$tax_not_in_flg = true;
 							if ( !empty( $post_terms ) && is_array( $post_terms ) ) {
 								foreach ( $post_terms as $post_term ) {
-									if ( !in_array( $post_term->slug, $tax_in ) ) {
-										$tax_not_in_flg = true;
+									if ( in_array( $post_term->slug, $tax_in ) ) {
+										$tax_not_in_flg = false;
 									}
 								}
 							}
