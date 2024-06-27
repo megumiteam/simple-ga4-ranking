@@ -8,6 +8,9 @@ function sga_ranking_ids( $args = array(), $get_with_page_views = false ) {
 		if ( function_exists( 'wp_date' ) ) {
 			return wp_date( $format, $timestamp, $timezone );
 		} else {
+			if ( null === $timestamp ) {
+				$timestamp = time();
+			}
 			return date_i18n( $format, $timestamp, ! isset( $timezone ) );
 		}
 	};
@@ -188,14 +191,14 @@ function sga_ranking_ids( $args = array(), $get_with_page_views = false ) {
 							continue;
 						}
 					}
-	
+
 					if ( array_key_exists( 'exclude_post_type', $r ) ) {
 						$exclude_post_type = explode( ',', $r['exclude_post_type'] );
 						if ( !empty ( $exclude_post_type ) && in_array( $post_obj->post_type, $exclude_post_type ) ) {
 							continue;
 						}
 					}
-	
+
 					$tax_in_flg = true;
 					foreach ( $r as $key => $val ) {
 						if ( strpos( $key, '__in' ) !== false ) {
@@ -216,7 +219,7 @@ function sga_ranking_ids( $args = array(), $get_with_page_views = false ) {
 					if ( !$tax_in_flg ) {
 						continue;
 					}
-	
+
 					$tax_not_in_flg = true;
 					foreach ( $r as $key => $val ) {
 						if ( strpos( $key, '__not_in' ) !== false ) {
@@ -273,7 +276,7 @@ function sga_ranking_ids( $args = array(), $get_with_page_views = false ) {
 					if ( get_transient( $transient_key ) ) {
 						$sga_ranking_result_keys[$index][$transient_key] = $value;
 					}
-				} 
+				}
 			}
 		}
 		$sga_ranking_result_keys['update'] = $date_now;
