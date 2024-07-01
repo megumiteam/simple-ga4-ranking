@@ -1,9 +1,10 @@
 === Simple GA 4 Ranking  ===
 Contributors: digitalcube,amimotoami,mt8biz
 Tags:  form, ranking, popular, google analytics
-Requires at least: 5.9
-Tested up to: 6.4
-Stable tag: 0.0.9
+Tested up to: 6.6
+Requires at least: 6.3
+Requires PHP:　7.4
+Stable tag: 0.0.10
 
 Ranking plugin using data from google analytics (GA4).
 
