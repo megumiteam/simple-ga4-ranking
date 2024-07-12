@@ -9,10 +9,10 @@ class View {
 			Admin::delete_cache();
 		}
 
-		$cache = get_transient( 'sga_ranking_result_keys', [] );
+		$cache         = get_transient( 'sga_ranking_result_keys', [] );
 		$cache_results = isset( $cache['results'] ) ? $cache['results'] : [];
 
-	?>
+		?>
 	<style>
 		.table_cache_list {
 			width: 100%;
@@ -80,20 +80,19 @@ class View {
 		</thead>
 		<tbody>
 		<?php foreach ( $cache_results as $key => $result ) : ?>
-			<?php
-
-				$value = get_transient( $key, [] );
-				$posts = [];
-				if ( is_array( $value ) && ! empty( $value ) ) {
-					foreach ( $value as $post_id ) {
-						$title = get_the_title( $post_id );
-						if ( empty( $title ) ) {
-							$title = $post_id;
-						}
-						$posts[] = $title;
+		<?php
+			$value = get_transient( $key, [] );
+			$posts = [];
+			if ( is_array( $value ) && ! empty( $value ) ) {
+				foreach ( $value as $post_id ) {
+					$title = get_the_title( $post_id );
+					if ( empty( $title ) ) {
+						$title = $post_id;
 					}
+					$posts[] = $title;
 				}
-			?>
+			}
+		?>
 			<tr>
 				<td class="key">
 					<?php echo esc_html( $key ); ?>
@@ -122,19 +121,19 @@ class View {
 					<?php if ( is_array( $posts ) && ! empty( $posts ) ) : ?>
 						<ol>
 						<?php foreach ( $posts as $post_id ) : ?>
-							<?php
-								$title = get_the_title( $post_id );
-								if ( empty( $title ) ) {
-									$title = $post_id;
-								}
-							?>
+						<?php
+							$title = get_the_title( $post_id );
+							if ( empty( $title ) ) {
+								$title = $post_id;
+							}
+						?>
 							<li>
 								<a href="<?php echo esc_url( get_the_permalink( $post_id ) ) ?>" target="_blank"><?php echo esc_html( $title ); ?></a>
 							</li>
 						<?php endforeach; ?>
 						</ol>
 					<?php else : ?>
-						<?php echo esc_html( var_export( $value, true ) ); ?>
+						<?php echo esc_html( var_export( $value, true ) ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_var_export ?>
 					<?php endif; ?>
 				</td>
 			</tr>
