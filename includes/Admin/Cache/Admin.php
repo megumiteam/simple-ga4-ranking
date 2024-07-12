@@ -27,7 +27,7 @@ class Admin {
 			set_transient(
 				'sga_ranking_result_keys',
 				$cache,
-				(int)( $cache_expires / 2 )
+				(int) ( $cache_expires / 2 )
 			);
 		}
 	}
