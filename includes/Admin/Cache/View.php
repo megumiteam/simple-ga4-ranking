@@ -103,7 +103,7 @@ class View {
 						?>
 						<input type="hidden" name="nonce" value="<?php echo esc_attr( $nonce ); ?>">
 						<input type="hidden" name="cache_key" value="<?php echo esc_attr( $key ); ?>">
-						<input type="submit" name="delete_cache" value="DELETE" onclick="return confirm('このキャッシュを削除しますか？');" >
+						<input type="submit" name="delete_cache" value="DELETE" onclick="return confirm('Do you want to delete this cache?');" >
 					</form>
 				</td>
 				<td>
