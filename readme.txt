@@ -3,8 +3,8 @@ Contributors: digitalcube,amimotoami,mt8biz
 Tags:  form, ranking, popular, google analytics
 Tested up to: 6.6
 Requires at least: 6.3
-Requires PHP:　7.4
-Stable tag: 0.0.10
+Requires PHP:　8.1
+Stable tag: 0.0.11
 
 Ranking plugin using data from google analytics (GA4).
 
