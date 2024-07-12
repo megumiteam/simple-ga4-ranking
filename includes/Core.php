@@ -5,7 +5,8 @@ class Core {
 
 	public function register_hooks() {
 		add_action(
-			'admin_menu', function() {
+			'admin_menu',
+			function() {
 				$admin_view = new Admin\Options\View();
 				add_menu_page(
 					'Simple GA4 Ranking',
@@ -17,6 +18,22 @@ class Core {
 				);
 			}
 		);
+
+		add_action(
+			'admin_menu',
+			function() {
+				$admin_view = new Admin\Cache\View();
+				add_submenu_page(
+					'sga4_ranking',
+					'Cache',
+					'Cache',
+					'administrator',
+					'sga4_ranking_cache',
+					[ $admin_view, 'option_page' ],
+				);
+			}
+		);
+
 		add_action(
 			'plugins_loaded', function() {
 				if ( class_exists( '\digitalcube\SimpleGA4Ranking\Admin\OAuth\Admin' ) ) {

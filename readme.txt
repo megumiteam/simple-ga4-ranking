@@ -54,3 +54,6 @@ The feature to work very lightweight, because it is not save ranking data in Wor
 * Tested: WordPress 6.6
 * Merged: If the date cannot be obtained with wp_date, start_date and end_date must be specified by @shiro96
 * Merged: Allow specifying post type when in debug mode by @Shizumi
+
+= 0.0.11 =
+* Added Admin screen for cache list

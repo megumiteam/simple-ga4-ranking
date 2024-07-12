@@ -5,12 +5,12 @@ Plugin URI: https://digitalcube.jp
 Description: Ranking plugin using data from google analytics.
 Author: Digitalcube
 Author URI: https://digitalcube.jp
-Version: 0.0.10
+Version: 0.0.11
 Domain Path: /languages
 Text Domain: sga4ranking
 Tested up to: 6.6
 Requires at least: 6.3
-Requires PHP:　7.4
+Requires PHP:　8.1
 
 Copyright 2018 - 2022 digitalcube (email : info@digitalcube.jp)
 This program is free software; you can redistribute it and/or modify
@@ -62,6 +62,8 @@ if ( ! shortcode_exists( 'sga_ranking' ) ) :
 		require_once __DIR__  . '/includes/Admin/OAuth/View.php';
 		require_once __DIR__  . '/includes/Admin/Options/Admin.php';
 		require_once __DIR__  . '/includes/Admin/Options/View.php';
+		require_once __DIR__  . '/includes/Admin/Cache/Admin.php';
+		require_once __DIR__  . '/includes/Admin/Cache/View.php';
 	}
 	if ( class_exists( 'digitalcube\SimpleGA4Ranking\Core' ) ) {
 		$core = new \digitalcube\SimpleGA4Ranking\Core();
