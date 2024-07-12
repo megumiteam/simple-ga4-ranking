@@ -14,7 +14,7 @@ class Admin {
 		}
 		delete_transient( $cache_key );
 
-		$cache         = get_transient( 'sga_ranking_result_keys', [] );
+		$cache         = get_transient( 'sga_ranking_result_keys' );
 		$cache_results = isset( $cache['results'] ) ? $cache['results'] : [];
 		if ( array_key_exists( $cache_key, $cache_results ) ) {
 			$options = get_option( SGA_RANKING_OPTION_NAME );

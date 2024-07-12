@@ -9,7 +9,7 @@ class View {
 			Admin::delete_cache();
 		}
 
-		$cache         = get_transient( 'sga_ranking_result_keys', [] );
+		$cache         = get_transient( 'sga_ranking_result_keys' );
 		$cache_results = isset( $cache['results'] ) ? $cache['results'] : [];
 
 		?>
@@ -81,7 +81,7 @@ class View {
 		<tbody>
 		<?php foreach ( $cache_results as $key => $result ) : ?>
 			<?php
-			$value = get_transient( $key, [] );
+			$value = get_transient( $key );
 			$posts = [];
 			if ( is_array( $value ) && ! empty( $value ) ) {
 				foreach ( $value as $post_id ) {
@@ -116,7 +116,7 @@ class View {
 				</td>
 				<td>
 					<?php
-						$posts = get_transient( $key, [] );
+						$posts = get_transient( $key );
 					?>
 					<?php if ( is_array( $posts ) && ! empty( $posts ) ) : ?>
 						<ol>
