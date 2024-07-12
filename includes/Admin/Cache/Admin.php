@@ -14,20 +14,20 @@ class Admin {
 		}
 		delete_transient( $cache_key );
 
-		$cache = get_transient( 'sga_ranking_result_keys', [] );
+		$cache         = get_transient( 'sga_ranking_result_keys', [] );
 		$cache_results = isset( $cache['results'] ) ? $cache['results'] : [];
 		if ( array_key_exists( $cache_key, $cache_results ) ) {
 			$options = get_option( SGA_RANKING_OPTION_NAME );
 			if ( ! $options || ! is_array( $options ) ) {
-				$options = array();
+				$options = [];
 			}
 			$cache_expires = (int) apply_filters( 'sga_ranking_cache_expire', $options['cache_expire'] );
 			unset( $cache_results[ $cache_key ] );
 			$cache['results'] = $cache_results;
 			set_transient(
 				'sga_ranking_result_keys',
-				$cache, 
-				(int)($cache_expires / 2)
+				$cache,
+				(int)( $cache_expires / 2 )
 			);
 		}
 	}

@@ -80,7 +80,7 @@ class View {
 		</thead>
 		<tbody>
 		<?php foreach ( $cache_results as $key => $result ) : ?>
-		<?php
+			<?php
 			$value = get_transient( $key, [] );
 			$posts = [];
 			if ( is_array( $value ) && ! empty( $value ) ) {
@@ -92,7 +92,7 @@ class View {
 					$posts[] = $title;
 				}
 			}
-		?>
+			?>
 			<tr>
 				<td class="key">
 					<?php echo esc_html( $key ); ?>
@@ -121,12 +121,12 @@ class View {
 					<?php if ( is_array( $posts ) && ! empty( $posts ) ) : ?>
 						<ol>
 						<?php foreach ( $posts as $post_id ) : ?>
-						<?php
+							<?php
 							$title = get_the_title( $post_id );
 							if ( empty( $title ) ) {
 								$title = $post_id;
 							}
-						?>
+							?>
 							<li>
 								<a href="<?php echo esc_url( get_the_permalink( $post_id ) ) ?>" target="_blank"><?php echo esc_html( $title ); ?></a>
 							</li>
