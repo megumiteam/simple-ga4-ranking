@@ -3,15 +3,15 @@ Contributors: digitalcube,amimotoami,mt8biz
 Tags:  form, ranking, popular, google analytics
 Tested up to: 6.6
 Requires at least: 6.3
-Requires PHP:　8.1
+Requires PHP: 8.1
 Stable tag: 0.0.11
 
-Ranking plugin using data from google analytics (GA4).
+Ranking plugin using data from Google Analytics (GA4).
 
 == Description ==
 
-Ranking plugin using data from google analytics.
-The feature to work very lightweight, because it is not save ranking data in WordPress DB.
+Ranking plugin using data from Google Analytics.
+The feature is very lightweight because it does not save ranking data in WordPress DB.
 
 = How to use =
 
@@ -30,7 +30,7 @@ The feature to work very lightweight, because it is not save ranking data in Wor
 * Some fix
 
 = 0.0.3 =
-* Added fall back to composer autoloading
+* Added fallback to composer autoloading
 
 = 0.0.4 =
 * fix Google Authentication is deactivated. https://github.com/megumiteam/simple-ga4-ranking/issues/14 thanks @shinghiro
