@@ -366,7 +366,7 @@ function sga_ranking_url_to_postid( $url ) {
 				$request_match = $url . '/' . $request;
 			}
 
-			if ( preg_match( "!^$match!", $request_match, $matches ) ) {
+			if ( preg_match( "#^$match#", $request_match, $matches ) ) {
 				// Got a match.
 				// Trim the query of everything up to the '?'.
 				$query = preg_replace( "!^.+\?!", '', $query );
